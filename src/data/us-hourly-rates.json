@@ -1,0 +1,6 @@
+{
+  "sales": { "min": 32, "max": 42, "midpoint": 37 },
+  "customer-service": { "min": 32, "max": 40, "midpoint": 36 },
+  "tech-support": { "min": 35, "max": 45, "midpoint": 40 },
+  "back-office": { "min": 32, "max": 38, "midpoint": 35 }
+}

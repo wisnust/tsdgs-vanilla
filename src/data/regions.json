@@ -1,0 +1,37 @@
+[
+  {
+    "id": "us-onshore",
+    "label": "US Onshore",
+    "flag": "🇺🇸",
+    "description": "Highest quality, same timezone, premium pricing",
+    "locationIds": ["united-states"]
+  },
+  {
+    "id": "nearshore-latam",
+    "label": "Nearshore (Latin America)",
+    "flag": "🌎",
+    "description": "US timezone alignment, 40-50% savings, bilingual talent",
+    "locationIds": ["mexico", "colombia", "belize", "el-salvador", "dominican-republic"]
+  },
+  {
+    "id": "offshore-africa",
+    "label": "Offshore - Africa",
+    "flag": "🌍",
+    "description": "Native English options, competitive pricing, growing markets",
+    "locationIds": ["south-africa", "egypt", "kenya"]
+  },
+  {
+    "id": "offshore-asia",
+    "label": "Offshore - Asia Pacific",
+    "flag": "🌏",
+    "description": "Largest talent pool, 60-70% savings, mature ecosystem",
+    "locationIds": ["philippines"]
+  },
+  {
+    "id": "offshore-europe",
+    "label": "Offshore - Europe",
+    "flag": "🇪🇺",
+    "description": "Multilingual talent, technical skills, EU compliance",
+    "locationIds": ["eastern-europe"]
+  }
+]

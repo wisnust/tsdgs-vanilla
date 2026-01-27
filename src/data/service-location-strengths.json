@@ -1,0 +1,6 @@
+{
+  "sales": ["united-states", "mexico", "colombia", "philippines", "dominican-republic", "belize"],
+  "customer-service": ["united-states", "philippines", "south-africa", "mexico", "colombia", "belize"],
+  "tech-support": ["united-states", "philippines", "eastern-europe", "kenya", "egypt"],
+  "back-office": ["philippines", "egypt", "kenya", "eastern-europe"]
+}

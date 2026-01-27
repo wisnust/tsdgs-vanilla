@@ -1,0 +1,244 @@
+[
+  {
+    "id": "united-states",
+    "country": "United States",
+    "region": "North America",
+    "flag": "🇺🇸",
+    "rateRange": { "min": 29, "max": 39 },
+    "englishProficiency": "Native",
+    "timezone": "GMT-5 to GMT-8 (EST/PST)",
+    "specializations": ["Premium Support", "Complex Sales", "Technical Support", "Compliance-Sensitive Operations"],
+    "pros": [
+      "Native English with no cultural barriers",
+      "Same time zones as your customers",
+      "Ideal for highly regulated industries",
+      "Maximum quality control and oversight"
+    ],
+    "cons": [
+      "Highest labor costs",
+      "Competitive talent market"
+    ],
+    "infrastructureRating": 5,
+    "description": "US-based support offers the highest quality and easiest management for companies prioritizing premium customer experience, compliance requirements, or complex technical support."
+  },
+  {
+    "id": "mexico",
+    "country": "Mexico",
+    "region": "Latin America",
+    "flag": "🇲🇽",
+    "rateRange": { "min": 14, "max": 18 },
+    "englishProficiency": "Moderate",
+    "timezone": "GMT-6 (CST)",
+    "specializations": ["Bilingual Support", "Sales", "Customer Service", "Nearshore Operations"],
+    "pros": [
+      "Same time zones as US (nearshore advantage)",
+      "Strong bilingual Spanish/English workforce",
+      "Cultural proximity to US markets",
+      "Easy travel for site visits and management oversight"
+    ],
+    "cons": [
+      "English proficiency varies by region",
+      "Premium pricing compared to offshore"
+    ],
+    "infrastructureRating": 4,
+    "description": "Mexico offers excellent time zone alignment and bilingual capabilities, making it ideal for companies serving both English and Spanish-speaking customers in North America."
+  },
+  {
+    "id": "colombia",
+    "country": "Colombia",
+    "region": "Latin America",
+    "flag": "🇨🇴",
+    "rateRange": { "min": 12, "max": 19 },
+    "englishProficiency": "Moderate",
+    "timezone": "GMT-5 (EST)",
+    "specializations": ["Bilingual Support", "Sales", "Back Office", "Digital Marketing"],
+    "pros": [
+      "Neutral Spanish accent preferred by US Hispanic market",
+      "Growing English proficiency programs",
+      "Government incentives for BPO sector",
+      "Young, educated workforce with strong work ethic"
+    ],
+    "cons": [
+      "Infrastructure gaps outside major cities",
+      "English talent concentrated in urban areas"
+    ],
+    "infrastructureRating": 3,
+    "description": "Colombia has emerged as a top Latin American destination with government support, competitive costs, and a workforce known for warm, customer-focused service."
+  },
+  {
+    "id": "belize",
+    "country": "Belize",
+    "region": "Central America",
+    "flag": "🇧🇿",
+    "rateRange": { "min": 13, "max": 16 },
+    "englishProficiency": "Native",
+    "timezone": "GMT-6 (CST)",
+    "specializations": ["Customer Support", "Sales", "Collections", "Travel & Hospitality"],
+    "pros": [
+      "Native English speakers in a nearshore location",
+      "US time zone alignment",
+      "Cultural familiarity with North American markets",
+      "No accent neutralization training required"
+    ],
+    "cons": [
+      "Smaller talent pool than larger markets",
+      "Limited scalability for large programs"
+    ],
+    "infrastructureRating": 3,
+    "description": "Belize uniquely combines native English speakers with nearshore proximity, offering the language quality of offshore locations with the time zone benefits of Latin America."
+  },
+  {
+    "id": "el-salvador",
+    "country": "El Salvador",
+    "region": "Central America",
+    "flag": "🇸🇻",
+    "rateRange": { "min": 11, "max": 16 },
+    "englishProficiency": "Moderate",
+    "timezone": "GMT-6 (CST)",
+    "specializations": ["Customer Service", "Sales", "Back Office", "Bilingual Support"],
+    "pros": [
+      "Growing BPO sector with government support",
+      "Competitive costs within LATAM",
+      "US time zone alignment",
+      "Improving English language programs"
+    ],
+    "cons": [
+      "Emerging market with developing infrastructure",
+      "Smaller talent pool"
+    ],
+    "infrastructureRating": 3,
+    "description": "El Salvador is an emerging nearshore destination with competitive pricing and growing investment in BPO infrastructure and workforce development."
+  },
+  {
+    "id": "dominican-republic",
+    "country": "Dominican Republic",
+    "region": "Caribbean",
+    "flag": "🇩🇴",
+    "rateRange": { "min": 14, "max": 17 },
+    "englishProficiency": "Moderate",
+    "timezone": "GMT-4 (AST)",
+    "specializations": ["Bilingual Support", "Customer Service", "Sales", "Travel & Hospitality"],
+    "pros": [
+      "Strong bilingual workforce",
+      "Cultural affinity with US markets",
+      "Nearshore time zone benefits",
+      "Established tourism industry creates service-oriented culture"
+    ],
+    "cons": [
+      "Hurricane exposure and weather risks",
+      "Infrastructure reliability varies"
+    ],
+    "infrastructureRating": 3,
+    "description": "The Dominican Republic offers a bilingual Caribbean option with strong cultural alignment to US markets and a workforce experienced in hospitality and customer service."
+  },
+  {
+    "id": "south-africa",
+    "country": "South Africa",
+    "region": "Africa",
+    "flag": "🇿🇦",
+    "rateRange": { "min": 9, "max": 14 },
+    "englishProficiency": "Native",
+    "timezone": "GMT+2 (SAST)",
+    "specializations": ["Customer Support", "Financial Services", "Insurance", "Tech Support"],
+    "pros": [
+      "Native English speakers with neutral accent",
+      "Strong cultural alignment with UK and US markets",
+      "Overlap with European and US East Coast business hours",
+      "Deep expertise in financial services and insurance"
+    ],
+    "cons": [
+      "Infrastructure challenges in some areas",
+      "Load shedding (power reliability) concerns"
+    ],
+    "infrastructureRating": 4,
+    "description": "South Africa combines native English proficiency with Western-aligned business practices, making it exceptional for voice-based support and financial services."
+  },
+  {
+    "id": "egypt",
+    "country": "Egypt",
+    "region": "Northern Africa",
+    "flag": "🇪🇬",
+    "rateRange": { "min": 8, "max": 12 },
+    "englishProficiency": "Moderate",
+    "timezone": "GMT+2 (EET)",
+    "specializations": ["Multilingual Support", "Technical Support", "Data Entry", "Back Office"],
+    "pros": [
+      "Very competitive pricing",
+      "Arabic language capabilities for MENA support",
+      "Young, tech-savvy population",
+      "Strategic location bridging EMEA time zones"
+    ],
+    "cons": [
+      "Political and economic volatility",
+      "English proficiency requires screening"
+    ],
+    "infrastructureRating": 3,
+    "description": "Egypt offers exceptional value with competitive pricing and multilingual capabilities, particularly valuable for companies needing Arabic language support."
+  },
+  {
+    "id": "kenya",
+    "country": "Kenya",
+    "region": "East Africa",
+    "flag": "🇰🇪",
+    "rateRange": { "min": 7, "max": 12 },
+    "englishProficiency": "High",
+    "timezone": "GMT+3 (EAT)",
+    "specializations": ["Customer Support", "Tech Support", "Back Office", "Digital Services"],
+    "pros": [
+      "Strong English proficiency",
+      "Growing tech hub with young, educated workforce",
+      "Competitive pricing",
+      "Improving digital infrastructure"
+    ],
+    "cons": [
+      "Emerging BPO market",
+      "Infrastructure development ongoing"
+    ],
+    "infrastructureRating": 3,
+    "description": "Kenya is emerging as Africa's tech hub with strong English skills, a young educated workforce, and competitive pricing that rivals Asian offshore destinations."
+  },
+  {
+    "id": "eastern-europe",
+    "country": "Eastern Europe",
+    "region": "Europe",
+    "flag": "🇪🇺",
+    "rateRange": { "min": 14, "max": 19 },
+    "englishProficiency": "High",
+    "timezone": "GMT+1 to GMT+3",
+    "specializations": ["Technical Support", "IT Services", "Multilingual Support", "Finance & Accounting"],
+    "pros": [
+      "Multilingual talent (German, French, Spanish, etc.)",
+      "Strong technical and analytical skills",
+      "EU integration ensures regulatory compliance",
+      "Excellent educational systems with STEM focus"
+    ],
+    "cons": [
+      "Geopolitical risks in some areas",
+      "Rising wage pressures in major cities"
+    ],
+    "infrastructureRating": 4,
+    "description": "Eastern Europe excels in multilingual support and technical roles, with EU compliance and strong infrastructure making it ideal for European market coverage."
+  },
+  {
+    "id": "philippines",
+    "country": "Philippines",
+    "region": "Southeast Asia",
+    "flag": "🇵🇭",
+    "rateRange": { "min": 8, "max": 14 },
+    "englishProficiency": "High",
+    "timezone": "GMT+8 (PHT)",
+    "specializations": ["Customer Support", "Sales", "Technical Support", "Healthcare BPO"],
+    "pros": [
+      "Largest BPO talent pool globally (1.3M+ workers)",
+      "Strong cultural affinity with Western markets",
+      "Neutral accent and excellent communication",
+      "Mature ecosystem with rapid AI/automation adoption"
+    ],
+    "cons": [
+      "12-hour time zone difference from US",
+      "Requires thoughtful scheduling for real-time support"
+    ],
+    "infrastructureRating": 4,
+    "description": "The Philippines is the world's leading BPO destination with the largest English-speaking talent pool, exceptional cultural fit, and 60-70% cost savings versus US rates."
+  }
+]

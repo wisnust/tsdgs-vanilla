@@ -1,0 +1,6 @@
+[
+  { "value": "sales", "label": "Sales / Lead Generation" },
+  { "value": "customer-service", "label": "Customer Service" },
+  { "value": "tech-support", "label": "Tech Support / IT Helpdesk" },
+  { "value": "back-office", "label": "Back Office / Data Entry" }
+]

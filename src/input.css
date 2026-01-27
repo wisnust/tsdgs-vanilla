@@ -61,7 +61,8 @@
     --primary: 222 47% 21%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 231 100% 71%;
+    /* --secondary: 231 100% 71%; */
+    --secondary: 222.97deg 93.67% 69.02%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 14% 90%;
@@ -93,6 +94,10 @@
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 222 30% 30%;
     --sidebar-ring: 231 100% 71%;
+
+    --tds-blue: #313c59;
+    --tds-purple: #6690fa;
+    --tds-purple-2: #5762ff;
   }
 
   .dark {
@@ -142,7 +147,8 @@
 
 @layer utilities {
   .gradient-hero {
-    background: linear-gradient(135deg, hsl(222 47% 21%) 0%, hsl(222 47% 28%) 50%, hsl(231 60% 35%) 100%);
+    /* background: linear-gradient(135deg, hsl(222 47% 21%) 0%, hsl(222 47% 28%) 50%, hsl(231 60% 35%) 100%); */
+    background-color: var(--tds-blue);
   }
 
   .gradient-card {
@@ -150,7 +156,8 @@
   }
 
   .gradient-accent {
-    background: linear-gradient(135deg, hsl(231 100% 71%) 0%, hsl(250 100% 75%) 100%);
+    /* background: linear-gradient(135deg, hsl(231 100% 71%) 0%, hsl(250 100% 75%) 100%); */
+    background: linear-gradient(180deg, var(--tds-purple), var(--tds-purple-2));
   }
 
   .text-gradient {
