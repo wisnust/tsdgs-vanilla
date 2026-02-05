@@ -94,8 +94,8 @@ export function renderLocationCard(location, rank) {
     const ringClass = isTopPick ? 'ring-2' : '';
     const topBadge = isTopPick ? '<div class="absolute top-0 right-0 gradient-accent px-3 py-1 text-xs font-semibold text-accent-foreground rounded-bl-lg">Top Recommendation</div>' : '';
     const shadowClasses = isTopPick 
-        ? 'rounded-lg border bg-card text-card-foreground relative overflow-hidden transition-all duration-300 hover:shadow-card-hover ring-2 ring-secondary shadow-lg'
-        : 'rounded-lg border bg-card text-card-foreground shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-card-hover shadow-card';
+        ? 'rounded-lg border bg-card text-card-foreground relative overflow-hidden transition-all duration-300 ring-2 ring-secondary shadow-lg'
+        : 'rounded-lg border bg-card text-card-foreground shadow-sm relative overflow-hidden transition-all duration-300 shadow-card';
 
     const div = document.createElement('div');
     div.className = 'animate-slide-up';
