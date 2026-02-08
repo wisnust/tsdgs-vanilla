@@ -9,7 +9,7 @@ export function handleAllRegionToggle(e) {
     allCheckbox.setAttribute('data-state', isChecked ? 'unchecked' : 'checked');
     
     if (!isChecked) {
-        allCheckbox.innerHTML = '<span data-state="checked" class="flex items-center justify-center text-current" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
+        allCheckbox.innerHTML = '<span data-state="checked" class="checkbox__checkmark" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="checkbox__checkmark-icon"><path d="M20 6 9 17l-5-5"></path></svg></span>';
     } else {
         allCheckbox.innerHTML = '';
     }
@@ -26,7 +26,7 @@ export function handleRegionCheckboxToggle(e) {
     checkbox.setAttribute('data-state', isChecked ? 'unchecked' : 'checked');
     
     if (!isChecked) {
-        checkbox.innerHTML = '<span data-state="checked" class="flex items-center justify-center text-current" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
+        checkbox.innerHTML = '<span data-state="checked" class="checkbox__checkmark" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="checkbox__checkmark-icon"><path d="M20 6 9 17l-5-5"></path></svg></span>';
     } else {
         checkbox.innerHTML = '';
     }
@@ -43,25 +43,23 @@ function updateRegionToggleState() {
         regionCheckboxes.forEach(checkbox => {
             checkbox.setAttribute('aria-checked', 'true');
             checkbox.setAttribute('data-state', 'checked');
-            checkbox.innerHTML = '<span data-state="checked" class="flex items-center justify-center text-current" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
+            checkbox.innerHTML = '<span data-state="checked" class="checkbox__checkmark" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="checkbox__checkmark-icon"><path d="M20 6 9 17l-5-5"></path></svg></span>';
             checkbox.disabled = true;
         });
         regionLabels.forEach(label => {
-            label.classList.add('opacity-60', 'cursor-not-allowed');
-            label.classList.remove('cursor-pointer');
+            label.classList.add('checkbox--disabled');
         });
     } else {
         regionCheckboxes.forEach(checkbox => {
             checkbox.disabled = false;
         });
         regionLabels.forEach(label => {
-            label.classList.remove('opacity-60', 'cursor-not-allowed');
-            label.classList.add('cursor-pointer');
+            label.classList.remove('checkbox--disabled');
         });
     }
 }
 
-export function handleFormSubmit(e, appState, appData, getRecommendations, showResults, saveUserInput) {
+export function handleFormSubmit(e, appState, appData, getRecommendations, showResults, saveUserInput, showLoading) {
     e.preventDefault();
     
     const agents = parseInt(id('agents').value) || 50;
@@ -82,6 +80,10 @@ export function handleFormSubmit(e, appState, appData, getRecommendations, showR
     saveUserInput(input);
     appState.inputData = input;
 
+    if (showLoading) {
+        showLoading();
+    }
+    
     appState.isLoading = true;
     const submitBtn = id('submitBtn');
     submitBtn.disabled = true;
@@ -106,8 +108,9 @@ export function handleReset(appState, clearUserInput, showForm, saveUserInput) {
     id('agents').value = '50';
     id('service').value = '';
     id('serviceValue').textContent = 'Select a service type';
-    id('serviceValue').classList.add('text-muted-foreground');
-    id('serviceDropdown').classList.add('hidden');
+    id('serviceValue').classList.add('form-quiz__dropdown-value');
+    const dropdown = id('serviceDropdown');
+    dropdown.style.display = 'none';
     
     queryAll('.region-checkbox, #all').forEach(checkbox => {
         checkbox.setAttribute('aria-checked', 'false');
@@ -117,23 +120,23 @@ export function handleReset(appState, clearUserInput, showForm, saveUserInput) {
     });
     
     queryAll('[id^="region-"]').forEach(label => {
-        label.classList.remove('opacity-60', 'cursor-not-allowed', 'disabled');
-        label.classList.add('cursor-pointer');
+        label.classList.remove('checkbox--disabled');
     });
 }
 
 export function selectService(value, label) {
     id('service').value = value;
     id('serviceValue').textContent = label;
-    id('serviceValue').classList.remove('text-muted-foreground');
-    id('serviceDropdown').classList.add('hidden');
+    id('serviceValue').classList.remove('form-quiz__dropdown-value');
+    id('serviceDropdown').style.display = 'none';
     
     window.renderServiceTypes(window.appData.serviceTypes);
     validateForm();
 }
 
 export function toggleServiceDropdown() {
-    id('serviceDropdown').classList.toggle('hidden');
+    const dropdown = id('serviceDropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 }
 
 export function validateForm() {
@@ -152,6 +155,6 @@ document.addEventListener('click', function(event) {
     if (serviceButton && serviceDropdown && 
         !serviceButton.contains(event.target) &&
         !serviceDropdown.contains(event.target)) {
-        serviceDropdown.classList.add('hidden');
+        serviceDropdown.style.display = 'none';
     }
 });

@@ -8,35 +8,32 @@ export function renderServiceTypes(serviceTypes) {
     serviceTypes.forEach(service => {
         const isSelected = service.value === selectedValue;
         const optionDiv = document.createElement('div');
-        optionDiv.className = 'px-1.5 py-1.5 cursor-pointer text-sm flex items-center gap-1 rounded-md transition-colors';
-        if (isSelected) {
-            optionDiv.classList.add('bg-accent', 'text-accent-foreground');
-        }
+        optionDiv.className = isSelected ? 'form-quiz__dropdown-option form-quiz__dropdown-option--selected' : 'form-quiz__dropdown-option';
         optionDiv.dataset.value = service.value;
         optionDiv.addEventListener('click', () => {
             window.selectService(service.value, service.label);
         });
         optionDiv.addEventListener('mouseenter', function() {
             queryAll('#serviceDropdown > div').forEach(el => {
-                el.classList.remove('bg-accent', 'text-accent-foreground');
+                el.classList.remove('form-quiz__dropdown-option--selected');
             });
-            optionDiv.classList.add('bg-accent', 'text-accent-foreground');
+            optionDiv.classList.add('form-quiz__dropdown-option--selected');
         });
         optionDiv.addEventListener('mouseleave', function() {
             queryAll('#serviceDropdown > div').forEach(el => {
-                el.classList.remove('bg-accent', 'text-accent-foreground');
+                el.classList.remove('form-quiz__dropdown-option--selected');
             });
             const currentSelected = id('service').value;
             queryAll('#serviceDropdown > div').forEach(el => {
                 if (el.dataset.value === currentSelected) {
-                    el.classList.add('bg-accent', 'text-accent-foreground');
+                    el.classList.add('form-quiz__dropdown-option--selected');
                 }
             });
         });
         
         // Add checkmark
         const checkmark = document.createElement('span');
-        checkmark.className = 'text-sm font-semibold w-4 text-center';
+        checkmark.className = 'form-quiz__dropdown-option-checkmark';
         checkmark.textContent = isSelected ? '✓' : '';
         optionDiv.appendChild(checkmark);
         
@@ -55,12 +52,12 @@ export function renderRegions(regions) {
 
     // All Regions option
     const allLabel = document.createElement('label');
-    allLabel.className = 'flex items-start space-x-3 rounded-lg border border-border/50 p-4 transition-colors hover:bg-muted/50 cursor-pointer';
+    allLabel.className = 'checkbox';
     allLabel.innerHTML = `
-        <button type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on" class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="all"></button>
-        <div class="checkbox-text space-y-1">
-            <div class="checkbox-text-main flex items-center gap-2 text-sm font-medium">🌍 All Regions</div>
-            <div class="checkbox-text-desc text-xs text-muted-foreground">Compare options across all available regions</div>
+        <button type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="on" class="checkbox__input" id="all"></button>
+        <div class="checkbox__content">
+            <div class="checkbox__label">🌍 All Regions</div>
+            <div class="checkbox__description">Compare options across all available regions</div>
         </div>
     `;
     container.appendChild(allLabel);
@@ -68,13 +65,13 @@ export function renderRegions(regions) {
     // Individual regions
     regions.forEach(region => {
         const regionLabel = document.createElement('label');
-        regionLabel.className = 'flex items-start space-x-3 rounded-lg border border-border/50 p-4 transition-colors hover:bg-muted/50 cursor-pointer';
+        regionLabel.className = 'checkbox';
         regionLabel.id = 'region-' + region.id;
         regionLabel.innerHTML = `
-            <button type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="${region.id}" class="peer region-checkbox h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"></button>
-            <div class="checkbox-text space-y-1">
-                <div class="checkbox-text-main flex items-center gap-2 text-sm font-medium">${region.flag} ${region.label}</div>
-                <div class="checkbox-text-desc text-xs text-muted-foreground">${region.description}</div>
+            <button type="button" role="checkbox" aria-checked="false" data-state="unchecked" value="${region.id}" class="checkbox__input region-checkbox"></button>
+            <div class="checkbox__content">
+                <div class="checkbox__label">${region.flag} ${region.label}</div>
+                <div class="checkbox__description">${region.description}</div>
             </div>
         `;
         container.appendChild(regionLabel);
@@ -91,109 +88,103 @@ export function renderRegions(regions) {
 
 export function renderLocationCard(location, rank) {
     const isTopPick = rank === 1;
-    const ringClass = isTopPick ? 'ring-2' : '';
-    const topBadge = isTopPick ? '<div class="absolute top-0 right-0 gradient-accent px-3 py-1 text-xs font-semibold text-accent-foreground rounded-bl-lg">Top Recommendation</div>' : '';
-    const shadowClasses = isTopPick 
-        ? 'rounded-lg border bg-card text-card-foreground relative overflow-hidden transition-all duration-300 ring-2 ring-secondary shadow-lg'
-        : 'rounded-lg border bg-card text-card-foreground shadow-sm relative overflow-hidden transition-all duration-300 shadow-card';
+    const topBadge = isTopPick ? '<div class="location-card__badge">Top Recommendation</div>' : '';
+    const cardClass = isTopPick 
+        ? 'location-card location-card--featured'
+        : 'location-card';
 
     const div = document.createElement('div');
-    div.className = 'animate-slide-up';
+    div.className = 'location-card-wrapper';
     div.style.animationDelay = (rank - 1) * 100 + 'ms';
     div.innerHTML = `
-        <div class="${ringClass} ${shadowClasses}">
+        <div class="${cardClass}">
             ${topBadge}
             
-            <div class="flex flex-col space-y-1.5 p-6 pb-3">
-                <div class="flex items-start justify-between">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl">${location.flag}</span>
-                        <div>
-                            <h3 class="font-display text-xl font-bold text-foreground">${location.country}</h3>
-                            <p class="text-sm text-muted-foreground flex items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-3 w-3"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> 
-                                ${location.region}
-                            </p>
-                        </div>
+            <div class="location-card__header">
+                <div class="location-card__info">
+                    <span class="location-card__flag">${location.flag}</span>
+                    <div class="location-card__details">
+                        <h3 class="location-card__title">${location.country}</h3>
+                        <p class="location-card__region">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> 
+                            ${location.region}
+                        </p>
                     </div>
-                    <div class="text-right">
-                        <div class="text-2xl font-bold text-success">${location.savingsPercentage}%</div>
-                        <div class="text-xs text-muted-foreground">est. savings</div>
-                    </div>
+                </div>
+                <div class="location-card__savings">
+                    <div class="location-card__savings-value">${location.savingsPercentage}%</div>
+                    <div class="location-card__savings-label">est. savings</div>
                 </div>
             </div>
 
-            <div class="card-content p-6 pt-0 space-y-4">
-                <div class="grid grid-cols-2 gap-3 text-sm">
-                    <div class="rounded-lg bg-muted/50 p-3">
-                        <div class="text-muted-foreground text-xs mb-1">Hourly Rate Range</div>
-                        <div class="font-semibold text-foreground">$${location.rateRange.min} - $${location.rateRange.max}/hr</div>
+            <div class="location-card__content">
+
+                <div class="location-card__metrics">
+                    <div class="location-card__rate">
+                        <div class="location-card__rate-label">Hourly Rate Range</div>
+                        <div class="location-card__rate-value">$${location.rateRange.min} - $${location.rateRange.max}/hr</div>
                     </div>
-                    <div class="rounded-lg bg-muted/50 p-3">
-                        <div class="text-muted-foreground text-xs mb-1">English Level</div>
-                        <div class="font-semibold text-foreground">${location.englishProficiency}</div>
+                    <div class="location-card__metric">
+                        <div class="location-card__metric-label">English Level</div>
+                        <div class="location-card__metric-value">${location.englishProficiency}</div>
                     </div>
-                    <div class="rounded-lg bg-muted/50 p-3">
-                        <div class="text-muted-foreground text-xs mb-1 flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-3 w-3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 
+                    <div class="location-card__metric">
+                        <div class="location-card__metric-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-3 w-3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                             Timezone
                         </div>
-                        <div class="font-semibold text-foreground">${location.timezone}</div>
+                        <div class="location-card__metric-value">${location.timezone}</div>
                     </div>
-                    <div class="rounded-lg bg-muted/50 p-3">
-                        <div class="text-muted-foreground text-xs mb-1 flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg> 
+                    <div class="location-card__metric">
+                        <div class="location-card__metric-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-3 w-3"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
                             Infrastructure
                         </div>
-                        <div class="font-semibold text-foreground">
+                        <div class="location-card__metric-value">
                             ${'★'.repeat(location.infrastructureRating)}${'☆'.repeat(5 - location.infrastructureRating)}
                         </div>
                     </div>
                 </div>
 
-                <div>
-                    <div class="text-xs font-medium text-muted-foreground mb-2">Why this location:</div>
-                    <div class="space-y-1.5">
+                <div class="location-card__strengths">
+                    <div class="location-card__strengths-title">Why this location:</div>
+                    <ul class="location-card__strengths-list">
                         ${location.matchReasons.slice(0, 3).map(reason => `
-                            <div class="flex items-start gap-2 text-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check h-4 w-4 text-success shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-                                <span class="text-foreground">${reason}</span>
-                            </div>
+                            <li class="location-card__strength-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="location-card__strength-icon"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                                ${reason}
+                            </li>
                         `).join('')}
-                    </div>
+                    </ul>
                 </div>
 
-                <div class="flex flex-wrap gap-1.5">
+                <div class="location-card__tags">
                     ${location.specializations.slice(0, 3).map(spec => `
-                        <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-xs">${spec}</span>
+                        <span class="location-card__tag">${spec}</span>
                     `).join('')}
                 </div>
 
-                <div class="border-t border-border pt-4">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <div class="text-xs text-muted-foreground">Est. Monthly Cost</div>
-                            <div class="font-semibold text-foreground text-sm">
-                                ${formatCurrencyRange(location.estimatedMonthlyCostRange.min, location.estimatedMonthlyCostRange.max)}
-                            </div>
+                <div class="location-card__cost">
+                    <div class="location-card__cost-item">
+                        <div class="location-card__cost-label">Est. Monthly Cost</div>
+                        <div class="location-card__cost-value">
+                            ${formatCurrencyRange(location.estimatedMonthlyCostRange.min, location.estimatedMonthlyCostRange.max)}
                         </div>
-                        <div class="text-right">
-                            <div class="text-xs text-muted-foreground flex items-center gap-1 justify-end">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-down h-3 w-3 text-success"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg> 
-                                Est. Annual Savings
-                            </div>
-                            <div class="font-bold text-success text-sm">
-                                ${formatCurrencyRange(location.estimatedAnnualSavingsRange.min, location.estimatedAnnualSavingsRange.max)}
-                            </div>
+                    </div>
+                    <div class="location-card__cost-item location-card__cost-item--savings">
+                        <div class="location-card__cost-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="location-card__cost-icon"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg> 
+                            Est. Annual Savings
+                        </div>
+                        <div class="location-card__cost-value location-card__cost-value--savings">
+                            ${formatCurrencyRange(location.estimatedAnnualSavingsRange.min, location.estimatedAnnualSavingsRange.max)}
                         </div>
                     </div>
                 </div>
 
-                <div class="rounded-lg bg-primary/5 p-3 border border-primary/10">
-                    <div class="flex items-start gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield h-4 w-4 text-primary mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
-                        <p class="text-xs text-muted-foreground leading-relaxed">${location.description}</p>
-                    </div>
+                <div class="location-card__description">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                    <p class="location-card__description-text">${location.description}</p>
                 </div>
             </div>
         </div>
@@ -208,10 +199,10 @@ export function showResults(recommendations, inputData, appData) {
     const resultsSection = id('resultsSection');
     const loadingState = id('loadingState');
 
-    heroSection.classList.add('hidden');
-    inputSection.classList.add('hidden');
-    loadingState.classList.add('hidden');
-    resultsSection.classList.remove('hidden');
+    heroSection.style.display = 'none';
+    inputSection.style.display = 'none';
+    loadingState.classList.remove('loading--visible');
+    resultsSection.classList.add('results--visible');
 
     // Render recommendations
     const container = id('recommendationsContainer');
@@ -266,7 +257,19 @@ export function showForm() {
     const inputSection = id('inputSection');
     const resultsSection = id('resultsSection');
 
-    heroSection.classList.remove('hidden');
-    inputSection.classList.remove('hidden');
-    resultsSection.classList.add('hidden');
+    heroSection.style.display = 'block';
+    inputSection.style.display = 'block';
+    resultsSection.classList.remove('results--visible');
+}
+
+export function showLoading() {
+    const heroSection = id('heroSection');
+    const inputSection = id('inputSection');
+    const resultsSection = id('resultsSection');
+    const loadingState = id('loadingState');
+
+    heroSection.style.display = 'none';
+    inputSection.style.display = 'none';
+    resultsSection.classList.remove('results--visible');
+    loadingState.classList.add('loading--visible');
 }

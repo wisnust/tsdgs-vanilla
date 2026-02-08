@@ -3,98 +3,98 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tailwind Starter</title>
-        <link href="main.css" rel="stylesheet" />
+        <title>TDS Global Solutions</title>
+        <link href="styles.css" rel="stylesheet" />
     </head>
     <body class="">
-        <div id="app" class="min-h-screen flex flex-col bg-background">
-            <header class="gradient-hero sticky top-0 z-50 border-b border-primary-foreground/10">
-                <div class="container mx-auto flex h-16 items-center justify-between px-4">
-                    <div class="flex items-center gap-3">
-                        <div class="flex items-center gap-1">
-                            <div class="flex gap-0.5">
-                                <div class="h-6 w-1.5 rounded-sm bg-secondary"></div>
-                                <div class="h-6 w-1.5 rounded-sm bg-secondary"></div>
-                                <div class="h-4 w-1.5 rounded-sm bg-secondary mt-2"></div>
+        <div class="app-quiz">
+            <header class="header-simple">
+                <div class="header-simple__container">
+                    <div class="header-simple__brand">
+                        <div class="header-simple__logo">
+                            <div class="header-simple__logo-bars">
+                                <div class="header-simple__logo-bar"></div>
+                                <div class="header-simple__logo-bar"></div>
+                                <div class="header-simple__logo-bar header-simple__logo-bar--short"></div>
                             </div>
-                            <span class="ml-2 text-xl font-display font-bold text-primary-foreground tracking-tight">TDS</span>
+                            <span class="header-simple__logo-text">TDS</span>
                         </div>
-                        <span class="text-xs text-primary-foreground/60 font-medium hidden sm:block">GLOBAL SOLUTIONS</span>
+                        <span class="header-simple__tagline">GLOBAL SOLUTIONS</span>
                     </div>
-                    <nav class="hidden md:flex items-center gap-6">
-                        <a href="https://tdsgs.com" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">Home</a><a href="https://tdsgs.com/#solutions" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">Solutions</a><a href="https://tdsgs.com/about" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">About</a>
+                    <nav class="header-simple__nav">
+                        <a href="https://tdsgs.com" target="_blank" rel="noopener noreferrer" class="header-simple__nav-link">Home</a><a href="https://tdsgs.com/#solutions" target="_blank" rel="noopener noreferrer" class="header-simple__nav-link">Solutions</a><a href="https://tdsgs.com/about" target="_blank" rel="noopener noreferrer" class="header-simple__nav-link">About</a>
                     </nav>
-                    <div class="flex items-center gap-4">
-                        <a href="tel:8887884441" class="hidden sm:flex items-center gap-2 text-sm text-primary-foreground/80">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone h-4 w-4">
+                    <div class="header-simple__actions">
+                        <a href="tel:8887884441" class="header-simple__phone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-simple__phone-icon">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                             (888) 788-4441
                         </a>
-                        <a href="https://www.tdsgs.com/schedule-a-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 gradient-accent text-accent-foreground shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] h-9 rounded-md px-4">Schedule a Call</a>
+                        <a href="https://www.tdsgs.com/schedule-a-call" target="_blank" rel="noopener noreferrer" class="header-simple__cta">Schedule a Call</a>
                     </div>
                 </div>
             </header>
 
-            <div id="heroSection" class="gradient-hero py-16 sm:py-20">
-                <div class="container mx-auto px-4">
-                    <div class="max-w-3xl mx-auto text-center">
-                        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight">Find the Perfect Location for Your <span class="text-secondary">Outsourced Call Center</span></h1>
-                        <p class="text-lg text-primary-foreground/80 mb-10 max-w-2xl mx-auto">Get data-driven recommendations for the best outsourcing destinations based on your specific needs, plus see your potential ROI compared to keeping operations in-house.</p>
+            <div id="heroSection" class="hero-quiz">
+                <div class="hero-quiz__container">
+                    <div class="hero-quiz__content">
+                        <h1 class="hero-quiz__title">Find the Perfect Location for Your <span class="hero-quiz__title-highlight">Outsourced Call Center</span></h1>
+                        <p class="hero-quiz__subtitle">Get data-driven recommendations for the best outsourcing destinations based on your specific needs, plus see your potential ROI compared to keeping operations in-house.</p>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                        <div class="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-4 text-center border border-primary-foreground/10">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-8 w-8 text-secondary mx-auto mb-2">
+                    <div class="hero-quiz__stats">
+                        <div class="hero-quiz__stat-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hero-quiz__stat-icon">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                                 <path d="M2 12h20"></path>
                             </svg>
-                            <div class="text-2xl font-bold text-primary-foreground">20+</div>
-                            <div class="text-xs text-primary-foreground/70">Global Locations</div>
+                            <div class="hero-quiz__stat-number">20+</div>
+                            <div class="hero-quiz__stat-label">Global Locations</div>
                         </div>
-                        <div class="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-4 text-center border border-primary-foreground/10">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-down h-8 w-8 text-secondary mx-auto mb-2">
+                        <div class="hero-quiz__stat-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hero-quiz__stat-icon">
                                 <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
                                 <polyline points="16 17 22 17 22 11"></polyline>
                             </svg>
-                            <div class="text-2xl font-bold text-primary-foreground">40-70%</div>
-                            <div class="text-xs text-primary-foreground/70">Cost Savings</div>
+                            <div class="hero-quiz__stat-number">40-70%</div>
+                            <div class="hero-quiz__stat-label">Cost Savings</div>
                         </div>
-                        <div class="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-4 text-center border border-primary-foreground/10">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-8 w-8 text-secondary mx-auto mb-2">
+                        <div class="hero-quiz__stat-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hero-quiz__stat-icon">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
                                 <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
-                            <div class="text-2xl font-bold text-primary-foreground">750+</div>
-                            <div class="text-xs text-primary-foreground/70">Companies Served</div>
+                            <div class="hero-quiz__stat-number">750+</div>
+                            <div class="hero-quiz__stat-label">Companies Served</div>
                         </div>
-                        <div class="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-4 text-center border border-primary-foreground/10">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield h-8 w-8 text-secondary mx-auto mb-2">
+                        <div class="hero-quiz__stat-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hero-quiz__stat-icon">
                                 <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                             </svg>
-                            <div class="text-2xl font-bold text-primary-foreground">35+</div>
-                            <div class="text-xs text-primary-foreground/70">Years Experience</div>
+                            <div class="hero-quiz__stat-number">35+</div>
+                            <div class="hero-quiz__stat-label">Years Experience</div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Main Content -->
-            <main class="flex-1 container mx-auto px-4 py-8 sm:py-12">
+            <main class="main-quiz">
 
-                <div id="inputSection" class="max-w-2xl mx-auto animate-fade-in">
-                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-card border-border/50">
-                        <div class="card-header flex flex-col space-y-1.5 p-6 pb-4">
-                            <h2 class="card-title font-semibold tracking-tight font-display text-xl">Tell us about your needs</h2>
-                            <p class="card-description text-sm text-muted-foreground">Provide details about your outsourcing requirements to get personalized recommendations</p>
+                <div id="inputSection" class="quiz-input">
+                    <div class="quiz-input-card">
+                        <div class="quiz-input-card__header">
+                            <h2 class="quiz-input-card__title">Tell us about your needs</h2>
+                            <p class="quiz-input-card__description">Provide details about your outsourcing requirements to get personalized recommendations</p>
                         </div>
-                        <div class="card-content p-6 !pt-0">
-                            <form id="inputForm" class="space-y-6">
-                                <div class="grid gap-6 md:grid-cols-2">
-                                    <div class="space-y-2">
-                                        <label for="agents" class="form-label text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4 text-secondary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <div class="quiz-input-card__content">
+                            <form id="inputForm" class="form-quiz">
+                                <div class="form-quiz__row">
+                                    <div class="form-quiz__field">
+                                        <label for="agents" class="form-quiz__label">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="form-quiz__label-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                                             Number of Agents Needed
                                         </label>
                                         <input
@@ -104,42 +104,42 @@
                                             max="10000"
                                             value="50"
                                             placeholder="e.g., 50"
-                                            class="form-input flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-11"
+                                            class="form-quiz__input"
                                         />
                                     </div>
 
-                                    <div class="space-y-2">
-                                        <label class="form-label text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2" for="service">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase h-4 w-4 text-secondary"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+                                    <div class="form-quiz__field">
+                                        <label class="form-quiz__label" for="service">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="form-quiz__label-icon"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
                                             Type of Service
                                         </label>
-                                        <div class="relative">
-                                            <button type="button" id="serviceButton" class="form-input flex w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-11">
-                                                <span id="serviceValue" class="text-muted-foreground">Select a service type</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 text-muted-foreground"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                        <div class="form-quiz__dropdown">
+                                            <button type="button" id="serviceButton" class="form-quiz__dropdown-button">
+                                                <span id="serviceValue" class="form-quiz__dropdown-value">Select a service type</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="form-quiz__dropdown-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                             </button>
                                             <input type="hidden" id="service" value="" />
-                                            <div id="serviceDropdown" class="absolute top-full left-0 right-0 hidden mt-1 bg-background border border-input rounded-md shadow-lg z-50 max-h-64 overflow-y-auto p-1">
+                                            <div id="serviceDropdown" class="form-quiz__dropdown-menu">
                                                 <!-- Services populated by JS -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="space-y-3">
-                                    <label class="form-label peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2 text-sm font-medium">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-4 w-4 text-secondary"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                <div class="form-quiz__regions">
+                                    <label class="form-quiz__regions-label">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="form-quiz__label-icon"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
                                         Preferred Regions
-                                        <span class="text-muted-foreground font-normal">(select all that interest you)</span>
+                                        <span class="form-quiz__regions-note">(select all that interest you)</span>
                                     </label>
-                                    <div id="regionsContainer" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                                    <div id="regionsContainer" class="form-quiz__regions-container">
                                         <!-- Regions populated by JS -->
                                     </div>
                                 </div>
 
                                 <button 
                                     type="submit" 
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-accent text-accent-foreground shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] h-12 rounded-lg px-8 text-base w-full"
+                                    class="form-quiz__submit"
                                     id="submitBtn"
                                     disabled
                                 >Get Recommendations</button>
@@ -148,104 +148,104 @@
                     </div>
                 </div>
 
-                <div id="resultsSection" class="hidden">
-                    <div class="space-y-8 animate-fade-in">
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div id="resultsSection" class="results">
+                    <div class="results__content">
+                        <div class="results__header">
                             <div>
-                                <h2 class="font-display text-2xl font-bold text-foreground">Your Top Outsourcing Locations</h2>
-                                <p class="text-muted-foreground">Based on your requirements, here are the best locations for your team</p>
+                                <h2 class="results__title">Your Top Outsourcing Locations</h2>
+                                <p class="results__subtitle">Based on your requirements, here are the best locations for your team</p>
                             </div>
-                            <button id="resetBtn" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground h-11 px-6 py-2 shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left h-4 w-4 mr-2"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                            <button id="resetBtn" class="results__reset">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="results__reset-icon"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
                                 Start Over
                             </button>
                         </div>
 
-                        <div class="flex items-center gap-3 p-4 rounded-lg bg-primary/5 border border-primary/10">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield h-6 w-6 text-primary shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
-                            <p class="text-sm text-foreground">
-                                <span class="font-semibold">These recommendations are based on TDS's global network of vetted, accredited BPO partners.</span>
+                        <div class="results__notice">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="results__notice-icon"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                            <p class="results__notice-text">
+                                <span class="results__notice-highlight">These recommendations are based on TDS's global network of vetted, accredited BPO partners.</span>
                                 All pricing reflects quality-assured vendors with proven track records.
                             </p>
                         </div>
 
-                        <div id="recommendationsContainer" class="grid gap-6 md:grid-cols-2">
+                        <div id="recommendationsContainer" class="results__cards">
                             <!-- Location cards populated by JS -->
                         </div>
 
                         <!-- ROI Calculator -->
-                        <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-card border-border/50">
-                            <div class="flex flex-col space-y-1.5 p-6">
-                                <h3 class="font-semibold tracking-tight font-display text-xl flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up h-5 w-5 text-success"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <div class="roi-card">
+                            <div class="roi-card__header">
+                                <h3 class="roi-card__title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="roi-card__title-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
                                     ROI Comparison: In-House vs. Outsourced
                                 </h3>
                             </div>
-                            <div class="p-6 pt-0 space-y-6">
-                                <div class="text-sm text-muted-foreground mb-4">
-                                    Comparing <span id="agentCountDisplay"></span> agents for <span class="font-medium text-foreground" id="serviceTypeDisplay"></span>
+                            <div class="roi-card__content">
+                                <div class="roi-card__description">
+                                    Comparing <span id="agentCountDisplay"></span> agents for <span class="roi-card__description-highlight" id="serviceTypeDisplay"></span>
                                 </div>
 
-                                <div class="grid md:grid-cols-2 gap-4">
+                                <div class="roi-comparison">
                                     <!-- In-House -->
-                                    <div class="rounded-xl border-2 border-destructive/20 bg-destructive/5 p-5">
-                                        <div class="flex items-center gap-2 mb-4">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 h-5 w-5 text-destructive"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>
-                                            <h4 class="font-semibold text-foreground">In-House (US)</h4>
+                                    <div class="roi-comparison__item roi-comparison__item--inhouse">
+                                        <div class="roi-comparison__header">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="roi-comparison__icon roi-comparison__icon--inhouse"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>
+                                            <h4 class="roi-comparison__title">In-House (US)</h4>
                                         </div>
-                                        <div class="space-y-3">
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Hourly Rate</span>
-                                                <span class="font-medium" id="usRate"></span>
+                                        <div class="roi-comparison__details">
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Hourly Rate</span>
+                                                <span class="roi-comparison__value" id="usRate"></span>
                                             </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Monthly Labor Cost</span>
-                                                <span class="font-medium" id="inHouseMonthly"></span>
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Monthly Labor Cost</span>
+                                                <span class="roi-comparison__value" id="inHouseMonthly"></span>
                                             </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Benefits (~25%)</span>
-                                                <span class="font-medium" id="inHouseBenefits"></span>
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Benefits (~25%)</span>
+                                                <span class="roi-comparison__value" id="inHouseBenefits"></span>
                                             </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Infrastructure</span>
-                                                <span class="font-medium" id="inHouseInfra"></span>
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Infrastructure</span>
+                                                <span class="roi-comparison__value" id="inHouseInfra"></span>
                                             </div>
-                                            <div class="border-t border-destructive/20 pt-3 mt-3">
-                                                <div class="flex justify-between">
-                                                    <span class="font-semibold">Est. Annual Total</span>
-                                                    <span class="font-bold text-destructive" id="inHouseTotal"></span>
+                                            <div class="roi-comparison__total roi-comparison__total--inhouse">
+                                                <div class="roi-comparison__row">
+                                                    <span class="roi-comparison__total-label">Est. Annual Total</span>
+                                                    <span class="roi-comparison__total-value roi-comparison__total-value--inhouse" id="inHouseTotal"></span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Outsourced -->
-                                    <div class="rounded-xl border-2 border-success/20 bg-success/5 p-5">
-                                        <div class="flex items-center gap-2 mb-4">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-5 w-5 text-success"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                            <h4 class="font-semibold text-foreground">Outsourced (<span id="outsourcedCountry"></span>)</h4>
+                                    <div class="roi-comparison__item roi-comparison__item--outsourced">
+                                        <div class="roi-comparison__header">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="roi-comparison__icon roi-comparison__icon--outsourced"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                            <h4 class="roi-comparison__title">Outsourced (<span id="outsourcedCountry"></span>)</h4>
                                         </div>
-                                        <div class="space-y-3">
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Hourly Rate</span>
-                                                <span class="font-medium" id="outsourcedRate"></span>
+                                        <div class="roi-comparison__details">
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Hourly Rate</span>
+                                                <span class="roi-comparison__value" id="outsourcedRate"></span>
                                             </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Monthly Labor Cost</span>
-                                                <span class="font-medium" id="outsourcedMonthly"></span>
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Monthly Labor Cost</span>
+                                                <span class="roi-comparison__value" id="outsourcedMonthly"></span>
                                             </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Benefits</span>
-                                                <span class="font-medium text-success">Included</span>
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Benefits</span>
+                                                <span class="roi-comparison__value roi-comparison__value--success">Included</span>
                                             </div>
-                                            <div class="flex justify-between">
-                                                <span class="text-sm text-muted-foreground">Infrastructure</span>
-                                                <span class="font-medium text-success">Included</span>
+                                            <div class="roi-comparison__row">
+                                                <span class="roi-comparison__label">Infrastructure</span>
+                                                <span class="roi-comparison__value roi-comparison__value--success">Included</span>
                                             </div>
-                                            <div class="border-t border-success/20 pt-3 mt-3">
-                                                <div class="flex justify-between">
-                                                    <span class="font-semibold">Est. Annual Total</span>
-                                                    <span class="font-bold text-success" id="outsourcedTotal"></span>
+                                            <div class="roi-comparison__total roi-comparison__total--outsourced">
+                                                <div class="roi-comparison__row">
+                                                    <span class="roi-comparison__total-label">Est. Annual Total</span>
+                                                    <span class="roi-comparison__total-value roi-comparison__total-value--outsourced" id="outsourcedTotal"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -267,47 +267,47 @@
                                     </div>
                                 </div> -->
 
-                                <div class="gradient-hero rounded-xl p-6 text-primary-foreground">
-                                    <div class="flex items-center justify-center gap-2 mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign h-6 w-6"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                                        <h4 class="font-display text-lg font-semibold">Your Estimated Annual Savings</h4>
+                                <div class="roi-summary">
+                                    <div class="roi-summary__header">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="roi-summary__icon"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                        <h4 class="roi-summary__title">Your Estimated Annual Savings</h4>
                                     </div>
-                                    <div class="text-center">
-                                        <div class="text-5xl font-bold mb-2" id="totalSavingsDisplay"></div>
-                                        <div class="text-primary-foreground/80">That's approximately <span class="font-semibold text-secondary" id="savingsPercentDisplay"></span> in labor cost reduction</div>
+                                    <div class="roi-summary__content">
+                                        <div class="roi-summary__amount" id="totalSavingsDisplay"></div>
+                                        <div class="roi-summary__description">That's approximately <span class="roi-summary__description-highlight" id="savingsPercentDisplay"></span> in labor cost reduction</div>
                                     </div>
-                                    <div class="grid grid-cols-3 gap-4 mt-6 pt-4 border-t border-primary-foreground/20">
-                                        <div class="text-center">
-                                            <div class="text-2xl font-bold" id="laborSavingsDisplay"></div>
-                                            <div class="text-xs text-primary-foreground/70">Labor Savings</div>
+                                    <div class="roi-summary__breakdown">
+                                        <div class="roi-summary__breakdown-item">
+                                            <div class="roi-summary__breakdown-value" id="laborSavingsDisplay"></div>
+                                            <div class="roi-summary__breakdown-label">Labor Savings</div>
                                         </div>
-                                        <div class="text-center">
-                                            <div class="text-2xl font-bold" id="benefitsSavingsDisplay"></div>
-                                            <div class="text-xs text-primary-foreground/70">Benefits Savings</div>
+                                        <div class="roi-summary__breakdown-item">
+                                            <div class="roi-summary__breakdown-value" id="benefitsSavingsDisplay"></div>
+                                            <div class="roi-summary__breakdown-label">Benefits Savings</div>
                                         </div>
-                                        <div class="text-center">
-                                            <div class="text-2xl font-bold" id="infrastructureSavingsDisplay"></div>
-                                            <div class="text-xs text-primary-foreground/70">Infrastructure Savings</div>
+                                        <div class="roi-summary__breakdown-item">
+                                            <div class="roi-summary__breakdown-value" id="infrastructureSavingsDisplay"></div>
+                                            <div class="roi-summary__breakdown-label">Infrastructure Savings</div>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-xs text-muted-foreground text-center">
+                                <p class="roi-disclaimer">
                                     * Estimates based on industry averages. Actual costs will vary based on your specific requirements and will be discussed during consultation.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="gradient-accent rounded-xl p-8 text-center text-accent-foreground">
-                            <h3 class="font-display text-2xl font-bold mb-3">Ready to Take the Next Step?</h3>
-                            <p class="text-accent-foreground/90 mb-6 max-w-2xl mx-auto">
+                        <div class="cta-quiz">
+                            <h3 class="cta-quiz__title">Ready to Take the Next Step?</h3>
+                            <p class="cta-quiz__description">
                                 Our team at TDSGS has helped 750+ companies find the perfect outsourcing partners. 
                                 Let us help you navigate vendor selection, contract negotiation, and implementation.
                             </p>
-                            <a href="https://www.tdsgs.com/schedule-a-call" target="_blank" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-2 border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-sm h-12 rounded-lg px-8 text-base">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5 mr-2"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+                            <a href="https://www.tdsgs.com/schedule-a-call" target="_blank" class="cta-quiz__button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-quiz__button-icon"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                                 Schedule a Free Consultation
                             </a>
-                            <p class="text-xs text-accent-foreground/70 mt-4">
+                            <p class="cta-quiz__disclaimer">
                                 Pricing shown is estimated based on market averages. Actual costs depend on your specific requirements.
                             </p>
                         </div>
@@ -316,26 +316,26 @@
                 </div>
 
                 <!-- Loading State -->
-                <div id="loadingState" class="hidden text-center py-12">
-                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-                    <p class="text-muted-foreground">Analyzing your requirements...</p>
+                <div id="loadingState" class="loading">
+                    <div class="loading__spinner"></div>
+                    <p class="loading__text">Analyzing your requirements...</p>
                 </div>
             </main>
 
-            <footer class="gradient-hero py-8 mt-auto">
-                <div class="container mx-auto px-4">
-                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div class="flex items-center gap-2">
-                            <div class="flex gap-0.5">
-                                <div class="h-5 w-1 rounded-sm bg-secondary"></div>
-                                <div class="h-5 w-1 rounded-sm bg-secondary"></div>
-                                <div class="h-3 w-1 rounded-sm bg-secondary mt-2"></div>
+            <footer class="footer-simple">
+                <div class="footer-simple__container">
+                    <div class="footer-simple__content">
+                        <div class="footer-simple__brand">
+                            <div class="footer-simple__logo-bars">
+                                <div class="footer-simple__logo-bar"></div>
+                                <div class="footer-simple__logo-bar"></div>
+                                <div class="footer-simple__logo-bar footer-simple__logo-bar--short"></div>
                             </div>
-                            <span class="text-lg font-display font-bold text-primary-foreground">TDS Global Solutions</span>
+                            <span class="footer-simple__brand-text">TDS Global Solutions</span>
                         </div>
-                        <div class="flex items-center gap-6 text-sm text-primary-foreground/70"><a href="https://tdsgs.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary-foreground transition-colors">tdsgs.com</a><span>•</span><a href="tel:8887884441" class="hover:text-primary-foreground transition-colors">(888) 788-4441</a><span>•</span><a href="mailto:info@tdsgs.com" class="hover:text-primary-foreground transition-colors">info@tdsgs.com</a></div>
+                        <div class="footer-simple__links"><a href="https://tdsgs.com" target="_blank" rel="noopener noreferrer" class="footer-simple__link">tdsgs.com</a><span class="footer-simple__separator">•</span><a href="tel:8887884441" class="footer-simple__link">(888) 788-4441</a><span class="footer-simple__separator">•</span><a href="mailto:info@tdsgs.com" class="footer-simple__link">info@tdsgs.com</a></div>
                     </div>
-                    <div class="mt-6 pt-6 border-t border-primary-foreground/10 text-center text-xs text-primary-foreground/50">© 2026 TDS Global Solutions. All rights reserved. Started in 1990 as a management consulting company focused on the call center industry.</div>
+                    <div class="footer-simple__copyright">© 2026 TDS Global Solutions. All rights reserved. Started in 1990 as a management consulting company focused on the call center industry.</div>
                 </div>
             </footer>
         </div>

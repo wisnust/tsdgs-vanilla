@@ -2,7 +2,7 @@ import { appState, getUserInput, saveUserInput, clearUserInput } from './state.j
 import { id, queryAll } from './utils.js';
 import { loadAllData } from './data.js';
 import { getRecommendations } from './recommender.js';
-import { renderServiceTypes, renderRegions, showResults, showForm } from './ui.js';
+import { renderServiceTypes, renderRegions, showResults, showForm, showLoading } from './ui.js';
 import { 
     handleAllRegionToggle, 
     handleRegionCheckboxToggle, 
@@ -63,7 +63,7 @@ function initialize() {
                     if (button) {
                         button.setAttribute('aria-checked', 'true');
                         button.setAttribute('data-state', 'checked');
-                        button.innerHTML = '<span data-state="checked" class="flex items-center justify-center text-current" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
+                        button.innerHTML = '<span data-state="checked" class="checkbox-icon-svg" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
                     }
                 });
 
@@ -72,13 +72,13 @@ function initialize() {
                     const allCheckbox = id('all');
                     allCheckbox.setAttribute('aria-checked', 'true');
                     allCheckbox.setAttribute('data-state', 'checked');
-                    allCheckbox.innerHTML = '<span data-state="checked" class="flex items-center justify-center text-current" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
+                    allCheckbox.innerHTML = '<span data-state="checked" class="checkbox-icon-svg" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
                     
                     // Disable individual region checkboxes
                     queryAll('.region-checkbox').forEach(checkbox => {
                         checkbox.setAttribute('aria-checked', 'true');
                         checkbox.setAttribute('data-state', 'checked');
-                        checkbox.innerHTML = '<span data-state="checked" class="flex items-center justify-center text-current" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
+                        checkbox.innerHTML = '<span data-state="checked" class="checkbox-icon-svg" style="pointer-events: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4"><path d="M20 6 9 17l-5-5"></path></svg></span>';
                         checkbox.disabled = true;
                     });
                     queryAll('[id^="region-"]').forEach(label => {
@@ -92,7 +92,7 @@ function initialize() {
             const form = id('inputForm');
             if (form) {
                 form.addEventListener('submit', (e) => {
-                    handleFormSubmit(e, appState, data, getRecommendations, showResults, saveUserInput);
+                    handleFormSubmit(e, appState, data, getRecommendations, showResults, saveUserInput, showLoading);
                 });
             }
 
