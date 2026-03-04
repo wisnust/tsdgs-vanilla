@@ -112,8 +112,8 @@ export function renderLocationCard(location, rank) {
                     </div>
                 </div>
                 <div class="location-card__savings">
-                    <div class="location-card__savings-value">${location.savingsPercentage}%</div>
-                    <div class="location-card__savings-label">est. savings</div>
+                    <div class="location-card__savings-value">${location.id === 'united-states' ? '' : location.savingsPercentageMin + '-' + location.savingsPercentageMax + '%'}</div>
+                    <div class="location-card__savings-label">${location.id === 'united-states' ? '' : 'est. savings'}</div>
                 </div>
             </div>
 
@@ -228,7 +228,9 @@ export function showResults(recommendations, inputData, appData) {
     const infrastructureSavings = inputData.agentCount * 500 * 12;
     const annualSavings = inHouseAnnual - outsourcedAnnualMidpoint;
     const totalPotentialSavings = annualSavings + benefitsSavings + infrastructureSavings;
-    const savingsPercent = Math.round((annualSavings / inHouseAnnual) * 100);
+    
+    const savingsPercentMin = Math.round(((inHouseAnnual - (outsourcedMonthlyMax * 12)) / inHouseAnnual) * 100);
+    const savingsPercentMax = Math.round(((inHouseAnnual - (outsourcedMonthlyMin * 12)) / inHouseAnnual) * 100);
 
     // Update ROI elements
     id('agentCountDisplay').textContent = inputData.agentCount;
@@ -246,7 +248,7 @@ export function showResults(recommendations, inputData, appData) {
     
     // Savings breakdown
     id('totalSavingsDisplay').textContent = '~' + formatCurrency(totalPotentialSavings);
-    id('savingsPercentDisplay').textContent = savingsPercent + '%';
+    id('savingsPercentDisplay').textContent = savingsPercentMin + '-' + savingsPercentMax + '%';
     id('laborSavingsDisplay').textContent = '~' + formatCurrency(annualSavings);
     id('benefitsSavingsDisplay').textContent = '~' + formatCurrency(benefitsSavings);
     id('infrastructureSavingsDisplay').textContent = '~' + formatCurrency(infrastructureSavings);

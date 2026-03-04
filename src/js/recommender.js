@@ -41,11 +41,6 @@ export function getRecommendations(input, data) {
         const rateMidpoint = (location.rateRange.min + location.rateRange.max) / 2;
         const costScore = Math.max(0, 25 - rateMidpoint);
         score += costScore;
-        
-        const savingsVsUS = Math.round(((usRate.midpoint - rateMidpoint) / usRate.midpoint) * 100);
-        if (savingsVsUS >= 70 || savingsVsUS >= 50) {
-            matchReasons.push(savingsVsUS + '% cost savings vs US rates');
-        }
 
         score += location.infrastructureRating * 3;
 
@@ -68,7 +63,18 @@ export function getRecommendations(input, data) {
         const monthlyMin = location.rateRange.min * monthlyHours * input.agentCount;
         const monthlyMax = location.rateRange.max * monthlyHours * input.agentCount;
         const monthlyMidpoint = rateMidpoint * monthlyHours * input.agentCount;
-        const savingsPercentage = Math.round(((usMonthlyMidpoint - monthlyMidpoint) / usMonthlyMidpoint) * 100);
+        
+        let savingsPercentageMin, savingsPercentageMax;
+        if (location.id === 'united-states') {
+            savingsPercentageMin = 0;
+            savingsPercentageMax = 0;
+        } else if (location.savingsRange) {
+            savingsPercentageMin = location.savingsRange.min;
+            savingsPercentageMax = location.savingsRange.max;
+        } else {
+            savingsPercentageMin = Math.round(((usRate.midpoint - location.rateRange.max) / usRate.midpoint) * 100);
+            savingsPercentageMax = Math.round(((usRate.midpoint - location.rateRange.min) / usRate.midpoint) * 100);
+        }
 
         return {
             ...location,
@@ -79,7 +85,8 @@ export function getRecommendations(input, data) {
                 min: (usMonthlyMidpoint * 12) - (monthlyMax * 12),
                 max: (usMonthlyMidpoint * 12) - (monthlyMin * 12)
             },
-            savingsPercentage,
+            savingsPercentageMin,
+            savingsPercentageMax,
             rateMidpoint
         };
     });
